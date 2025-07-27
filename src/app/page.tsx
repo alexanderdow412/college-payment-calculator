@@ -290,7 +290,7 @@ export default function Page() {
                 aria-label="Calculation results"
                 style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
               >
-                <ResultsCard label="Projected total (before loan interest)" value={result.projectedTotal} />
+                <ResultsCard label="Tuition Cost" value={result.projectedTotal} />
                 <ResultsCard label="Monthly payment" value={result.monthlyPayment} />
                 <ResultsCard label="Total interest" value={result.totalInterest} />
                 <ResultsCard label="Grand Total (Tuition cost + Total Interest)" value={result.projectedTotal + result.totalInterest} />

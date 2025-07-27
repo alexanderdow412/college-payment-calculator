@@ -9,7 +9,7 @@ type Props = {
 export default function ResultsCard({ label, value, hint }: Props) {
   const getCardStyle = (label: string) => {
     switch (label.toLowerCase()) {
-      case 'projected total (before loan interest)':
+      case 'tuition cost':
         return {
           backgroundColor: '#FEE2E2',
           borderColor: '#EF4444',
