@@ -118,31 +118,31 @@ export default function AmortizationTable({ principal, monthlyRate, totalPayment
   };
 
   return (
-    <div style={{ backgroundColor: '#f8fafc', borderRadius: '8px', padding: '24px' }}>
+    <div style={{ backgroundColor: 'transparent' }}>
       <div style={{ 
         display: 'flex', 
         justifyContent: 'space-between', 
         alignItems: 'center', 
         marginBottom: '16px' 
       }}>
-        <h3 style={{ fontWeight: '600', color: '#111827' }}>Amortization Schedule</h3>
+        <h3 style={{ fontWeight: '600', color: '#000', fontSize: '16px' }}>Amortization Schedule</h3>
         <div style={{ display: 'flex', gap: '8px' }}>
           <button
             type="button"
             onClick={exportToCSV}
             style={{
               padding: '6px 12px',
-              border: '1px solid #d1d5db',
+              border: '1px solid #e0e0e0',
               borderRadius: '4px',
-              background: 'white',
-              color: '#374151',
+              background: '#f5f5f5',
+              color: '#666',
               fontSize: '12px',
               fontWeight: '500',
               cursor: 'pointer',
               outline: 'none'
             }}
             onFocus={(e) => {
-              e.currentTarget.style.outline = '2px solid #3b82f6';
+              e.currentTarget.style.outline = '2px solid #333';
               e.currentTarget.style.outlineOffset = '2px';
             }}
             onBlur={(e) => {
@@ -156,17 +156,17 @@ export default function AmortizationTable({ principal, monthlyRate, totalPayment
             onClick={exportToPDF}
             style={{
               padding: '6px 12px',
-              border: '1px solid #d1d5db',
+              border: '1px solid #e0e0e0',
               borderRadius: '4px',
-              background: 'white',
-              color: '#374151',
+              background: '#f5f5f5',
+              color: '#666',
               fontSize: '12px',
               fontWeight: '500',
               cursor: 'pointer',
               outline: 'none'
             }}
             onFocus={(e) => {
-              e.currentTarget.style.outline = '2px solid #3b82f6';
+              e.currentTarget.style.outline = '2px solid #333';
               e.currentTarget.style.outlineOffset = '2px';
             }}
             onBlur={(e) => {
@@ -181,7 +181,7 @@ export default function AmortizationTable({ principal, monthlyRate, totalPayment
       <div style={{ 
         maxHeight: '300px', 
         overflowY: 'auto', 
-        border: '1px solid #e5e7eb', 
+        border: '1px solid #e0e0e0', 
         borderRadius: '6px',
         backgroundColor: 'white'
       }}>
@@ -193,8 +193,8 @@ export default function AmortizationTable({ principal, monthlyRate, totalPayment
           <thead style={{ 
             position: 'sticky', 
             top: 0, 
-            backgroundColor: '#f9fafb',
-            borderBottom: '2px solid #e5e7eb'
+            backgroundColor: '#f9f9f9',
+            borderBottom: '1px solid #e0e0e0'
           }}>
             <tr>
               <th style={{ 

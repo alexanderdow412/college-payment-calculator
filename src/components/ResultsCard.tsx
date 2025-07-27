@@ -9,29 +9,35 @@ type Props = {
 export default function ResultsCard({ label, value, hint }: Props) {
   const getCardStyle = (label: string) => {
     switch (label.toLowerCase()) {
-      case 'projected total':
+      case 'projected total (before loan interest)':
         return {
-          backgroundColor: 'rgba(34, 197, 94, 0.15)',
-          borderColor: '#16a34a',
-          color: '#15803d'
+          backgroundColor: '#FEE2E2',
+          borderColor: '#EF4444',
+          color: '#DC2626'
         };
       case 'monthly payment':
         return {
-          backgroundColor: 'rgba(59, 130, 246, 0.15)',
-          borderColor: '#2563eb',
-          color: '#1e40af'
+          backgroundColor: '#FFFBEB',
+          borderColor: '#F59E0B',
+          color: '#D97706'
         };
       case 'total interest':
         return {
-          backgroundColor: 'rgba(239, 68, 68, 0.15)',
-          borderColor: '#dc2626',
-          color: '#b91c1c'
+          backgroundColor: '#ECFDF5',
+          borderColor: '#10B981',
+          color: '#059669'
+        };
+      case 'grand total (tuition cost + total interest)':
+        return {
+          backgroundColor: '#F5F3FF',
+          borderColor: '#8B5CF6',
+          color: '#7C3AED'
         };
       default:
         return {
-          backgroundColor: 'rgba(107, 114, 128, 0.15)',
-          borderColor: '#4b5563',
-          color: '#1f2937'
+          backgroundColor: '#F5F5F5',
+          borderColor: '#9E9E9E',
+          color: '#616161'
         };
     }
   };
@@ -47,10 +53,10 @@ export default function ResultsCard({ label, value, hint }: Props) {
       style={{
         backgroundColor: cardStyle.backgroundColor,
         borderColor: cardStyle.borderColor,
-        boxShadow: `0 8px 25px ${cardStyle.borderColor}30`,
-        borderWidth: '2px',
-        borderRadius: '12px',
-        padding: '24px',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+        borderWidth: '1px',
+        borderRadius: '8px',
+        padding: '20px',
         outline: 'none'
       }}
       onFocus={(e) => {
@@ -61,8 +67,8 @@ export default function ResultsCard({ label, value, hint }: Props) {
         e.currentTarget.style.outline = 'none';
       }}
     >
-      <div className="kpi-label" style={{ color: cardStyle.color, fontSize: '14px', fontWeight: '600', marginBottom: '8px' }}>{label}</div>
-      <div className="kpi-value" style={{ color: cardStyle.color, fontSize: '28px', fontWeight: '700' }}>{toCurrency(Math.round(value))}</div>
+      <div className="kpi-label" style={{ color: cardStyle.color, fontSize: '14px', fontWeight: '500', marginBottom: '4px' }}>{label}</div>
+      <div className="kpi-value" style={{ color: cardStyle.color, fontSize: '24px', fontWeight: '600' }}>{toCurrency(Math.round(value))}</div>
       {hint && <div className="help mt-2" style={{ color: cardStyle.color }}>{hint}</div>}
     </div>
   );
